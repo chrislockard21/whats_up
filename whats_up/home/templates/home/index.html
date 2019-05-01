@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "home/_head.html" %}
+    <body>
+        {% include "home/_nav.html" %}
+        <div class="container jumbotron">
+            <h1>Welcome to Whats Up</h1>
+        </div>
+        {% if user.is_authenticated %}
+            {% for item in all_ToDos %}
+                <h1>{{item}}</h1>
+            {% endfor %}
+        {% endif %}
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-sm-12 shadow p-3 mb-5 bg-white rounded" style="background-image: linear-gradient(-90deg, red 5%, white 60%)">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <h2>Name of your thing</h2>
+                            <p>By default, shape is ellipse, size is farthest-corner, and position
+                                is center. Radial Gradient - Evenly Spaced Color Stops (this is default)
+                                The following example shows a radial gradient with evenly spaced color stops</p>
+                            <pre></pre>
+                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                            <button type="button" class="btn btn-success btn-sm">Complete</button>
+                            <button type="button" class="btn btn-danger btn-sm">Remove</button>
+                        </div>
+                        <div class="col-sm-5">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 shadow p-3 mb-5 bg-white rounded" style="background-image: linear-gradient(-90deg, green 5%, white 60%)">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <h2>Name of your thing</h2>
+                            <p>By default, shape is ellipse, size is farthest-corner, and position
+                                is center. Radial Gradient - Evenly Spaced Color Stops (this is default)
+                                The following example shows a radial gradient with evenly spaced color stops</p>
+                            <pre></pre>
+                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                            <button type="button" class="btn btn-success btn-sm">Complete</button>
+                            <button type="button" class="btn btn-danger btn-sm">Remove</button>
+                        </div>
+                        <div class="col-sm-5">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 shadow p-3 mb-5 bg-white rounded" style="background-image: linear-gradient(-90deg, orange 5%, white 60%)">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <h2>Name of your thing</h2>
+                            <p>By default, shape is ellipse, size is farthest-corner, and position
+                                is center. Radial Gradient - Evenly Spaced Color Stops (this is default)
+                                The following example shows a radial gradient with evenly spaced color stops</p>
+                            <pre></pre>
+                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                            <button type="button" class="btn btn-success btn-sm">Complete</button>
+                            <button type="button" class="btn btn-danger btn-sm">Remove</button>
+                        </div>
+                        <div class="col-sm-5">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 shadow p-3 mb-5 bg-white rounded" style="background-image: linear-gradient(-90deg, grey 5%, white 60%)">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <h2>Name of your thing</h2>
+                            <p>By default, shape is ellipse, size is farthest-corner, and position
+                                is center. Radial Gradient - Evenly Spaced Color Stops (this is default)
+                                The following example shows a radial gradient with evenly spaced color stops</p>
+                            <pre></pre>
+                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                            <button type="button" class="btn btn-success btn-sm">Complete</button>
+                            <button type="button" class="btn btn-danger btn-sm">Remove</button>
+                        </div>
+                        <div class="col-sm-5">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        {% include "home/_footer.html" %}
+    </body>
+</html>

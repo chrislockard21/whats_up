@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "home/_head.html" %}
+    <body>
+        {% include "home/_nav.html" %}
+        <div class="container jumbotron">
+            <h1>Welcome to Whats Up</h1>
+        </div>
+        {% if user.is_authenticated %}
+            {% for todo in all_ToDos %}
+                <h1>{{ todo }}</h1>
+            {% endfor %}
+        {% endif %}
+        {% include "home/_footer.html" %}
+    </body>
+</html>

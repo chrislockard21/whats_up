@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    {% include "home/_head.html" %}
+    <body style="background-color:#e2e2e2;">
+        {% include "home/_nav.html" %}
+        <div class="container" style="margin-top:10%; margin-bottom:10%;">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6" style="background-color:white; padding:20px; border-radius:10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+                    <h3 class="text-center" style="font-family:'Comic Sans MS', cursive, sans-serif">Whats Up?</h3>
+                    <h5 class="text-center">Register Here!</h5>
+                    <pre></pre>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            {{ form.username }}
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            {{ form.password }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <pre></pre>
+                    <p>
+                        Registration at Whats Up is simple. You'll never get an email from us becasue we simply don't ask for it!
+                        This tool is meant to help people stay organized without also worrying about their personal data being held in yet another application.
+                    </p>
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        {% include "home/_footer.html" %}
+    </body>
+</html>
